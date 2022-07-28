@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 /*--BODY--*/
 body {
   margin: 0px;
@@ -33,7 +33,29 @@ main {
   margin-right: 10px;
   font-size: 18px;
 }
-
-h2 {
+.localisation__name {
   font-size: 20px;
+}
+
+/*--EXPLORER--*/
+.explorer {
+  background-color: #fafafa;
+  padding: 10px 32px 32px 32px;
+  text-align: center;
+}
+.explorer__titre {
+  font-weight: bold;
+}
+.explorer__description {
+  font-weight: lighter;
+}
+.explorer__btn {
+  padding: 12px 24px;
+  position: relative;
+  top: 10px;
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  border-radius: 100px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
