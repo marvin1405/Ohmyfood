@@ -27,7 +27,13 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-color: rgba(214, 214, 214, 0.348);
 }
 .localisation__icon {
   margin-right: 10px;
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 20px;
 }/*# sourceMappingURL=styles.css.map */
