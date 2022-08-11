@@ -1,0 +1,117 @@
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+@keyframes spin {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.banner {
+    & img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    }   
+}
+.resto {
+    z-index: 1;
+    position: relative;
+    background-color: #f6f6f6;
+    border-radius: 32px 32px 0 0;
+    max-width: 1280px;
+    margin: auto;
+    margin-top: -64px;
+    &__titre h2 {
+        font-family: 'Shrikhand', sans-serif;
+        padding: 32px 16px;
+        margin: 0;
+        }
+}    
+
+.submenus {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0 16px;
+    @media (max-width: 1000px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.submenu {
+    overflow: hidden;
+    &__titre {
+        margin: 0;
+        margin-bottom: 25px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .menu-item {
+        background-color: white;
+        display: flex;
+        border-radius: 16px;
+        box-shadow: 2px 1px 8px -3px black;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin: 8px;
+        h4, p {
+            margin: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        &__description {
+            padding: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .price {
+            margin-left: auto;
+            font-weight: 900;
+            padding: 16px;
+            display: flex;
+            align-items: flex-end;
+        }
+        &__check {
+            background-color: $color-tertiary;
+            margin-right: -64px;
+            width: 64px;
+            transition: margin-right 0.5s;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+        &:hover {
+            .menu-item__check {
+            margin-right: 0;
+           }
+           i {
+            animation: spin 0.5s ease;
+           }
+        }   
+        i {
+            display: grid;
+            place-items: center;
+            background: white;
+            aspect-ratio: 1;
+            width: 32px;
+            border-radius: 16px;
+            color: $color-tertiary;
+            font-size: 25px;
+
+        }
+    }
+}
+
+
+

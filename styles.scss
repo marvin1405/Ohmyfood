@@ -29,12 +29,12 @@
     border-radius: 16px;
 }
 
-@mixin font-shrik {
-    font-family: 'shrikhand', cursive;
-}
-
 @mixin font-roboto {
     font-family: 'Roboto', sans-serif;
+}
+
+@mixin font-shrik {
+    font-family: 'shrikhand', cursive;
 }
 
 $color-primary: #9356DC;
@@ -221,3 +221,4 @@ main {
         }
     }
 }
+
