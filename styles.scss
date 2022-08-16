@@ -91,11 +91,20 @@ main {
         padding: 12px 24px;
         position: relative;
         top: 10px;
+        background-color: #686868;
         background-image: linear-gradient(to top, $color-primary, $color-secondary);
         border-radius: 100px;
         color: white;
         font-weight: 500;
+        transition-duration: 200ms;
+        box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
         cursor: pointer;
+        &:hover {
+            background-color: white;
+            box-shadow: 4px 4px 10px rgb(0 0 0 / 50%);
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
         }
 }
 
@@ -109,9 +118,11 @@ main {
     }
     & ol {
         display: flex;
-        flex-direction: column;
         gap: 15px;
         list-style-type: none;
+        @media (max-width: 1020px) {
+            flex-direction: column;
+        }
     }
     & li {
         padding: 24px 32px;
@@ -120,6 +131,12 @@ main {
         border-radius: 15px;
         cursor: pointer;
         position: relative;
+        transition: all 200ms ease-in-out;
+        flex: 1;
+        margin-left: 20px;
+        @media (max-width: 1020px) {
+            margin-left: 0;
+        }
         &::before {
             content: counter(list);
             counter-increment: list;
@@ -135,8 +152,7 @@ main {
             left: -10px;
         }
         &:hover {
-            transform: scale(1.015);
-            transition-duration: 200ms;
+            transform: scale(1.005);
         }
         & i.fa-solid {
             margin-right: 15px;
@@ -186,6 +202,27 @@ main {
             padding: 16px;
             background-color: white;
             @include border-card;
+            position: relative;
+            i {
+                font-size: 32px;
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .fa-solid {
+                color: transparent;
+                background-image: linear-gradient($color-secondary, $color-primary);
+                background-clip: text;
+                -webkit-background-clip: text;
+                opacity: 0;
+                transition: all 250ms ease-in-out;
+            }
+            &--btn {
+                &:hover .fa-solid {
+                    opacity: 1;
+                }
+            }
         }
     }
 }
