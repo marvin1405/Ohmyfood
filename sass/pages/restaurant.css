@@ -14,6 +14,22 @@
     transform: rotate(0);
   }
 }
+@-webkit-keyframes progress {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes progress {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .header {
   position: relative;
 }
@@ -53,6 +69,28 @@
   font-family: "Shrikhand", sans-serif;
   padding: 32px 16px;
   margin: 0;
+}
+.resto__btn {
+  position: relative;
+}
+.resto__btn i {
+  font-size: 32px;
+  position: absolute;
+  right: 45px;
+  top: 50%;
+  transform: translateY(-210%);
+  cursor: pointer;
+}
+.resto__btn .fa-solid {
+  color: transparent;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 250ms ease-in-out;
+}
+.resto__btn:hover .fa-solid {
+  opacity: 1;
 }
 
 .submenus {
@@ -99,6 +137,8 @@
   text-overflow: ellipsis;
   margin: 8px 8px 20px 8px;
   cursor: pointer;
+  -webkit-animation: progress 1s;
+          animation: progress 1s;
 }
 .submenu .menu-item h4, .submenu .menu-item p {
   margin: 0;

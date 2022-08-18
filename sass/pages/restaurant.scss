@@ -11,6 +11,15 @@ $color-tertiary: #99E2D0;
     }
 }
 
+@keyframes progress {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .header {
     position: relative;
     &__arrow {
@@ -49,6 +58,28 @@ $color-tertiary: #99E2D0;
         font-family: 'Shrikhand', sans-serif;
         padding: 32px 16px;
         margin: 0;
+        }
+        &__btn {
+            position: relative;
+            i {
+                font-size: 32px;
+                position: absolute;
+                right: 45px;
+                top: 50%;
+                transform: translateY(-210%);
+                cursor: pointer;
+            }
+            .fa-solid {
+                color: transparent;
+                background-image: linear-gradient($color-secondary, $color-primary);
+                background-clip: text;
+                -webkit-background-clip: text;
+                opacity: 0;
+                transition: all 250ms ease-in-out;
+            }
+            &:hover .fa-solid {
+                opacity: 1;
+            }
         }
 }    
 
@@ -93,6 +124,7 @@ $color-tertiary: #99E2D0;
         text-overflow: ellipsis;
         margin: 8px 8px 20px 8px;
         cursor: pointer;
+        animation: progress 1s;
         h4, p {
             margin: 0;
             overflow: hidden;
