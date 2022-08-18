@@ -16,18 +16,20 @@
 }
 @-webkit-keyframes progress {
   0% {
-    transform: scale(0);
+    opacity: 0;
+    transform: translate(0, 10px);
   }
   100% {
-    transform: scale(1);
+    opacity: 1;
   }
 }
 @keyframes progress {
   0% {
-    transform: scale(0);
+    opacity: 0;
+    transform: translate(0, 10px);
   }
   100% {
-    transform: scale(1);
+    opacity: 1;
   }
 }
 .header {
@@ -104,6 +106,24 @@
     grid-template-columns: 1fr;
   }
 }
+.submenus .menu-item {
+  -webkit-animation: progress 0.5s ease-in-out;
+          animation: progress 0.5s ease-in-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.submenus .menu-item:nth-child(2) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+.submenus .menu-item:nth-child(3) {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+.submenus .menu-item:nth-child(4) {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
 
 .submenu {
   overflow: hidden;
@@ -137,8 +157,6 @@
   text-overflow: ellipsis;
   margin: 8px 8px 20px 8px;
   cursor: pointer;
-  -webkit-animation: progress 1s;
-          animation: progress 1s;
 }
 .submenu .menu-item h4, .submenu .menu-item p {
   margin: 0;
