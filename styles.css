@@ -1,5 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@-webkit-keyframes loading {
+  from {
+    transform: scale(1);
+  }
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes loading {
+  from {
+    transform: scale(1);
+  }
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes heart {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes heart {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.loader {
+  position: fixed;
+  background-color: #ffffff;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  -webkit-animation: loading 3s forwards;
+          animation: loading 3s forwards;
+}
+.loader i {
+  color: #FF79DA;
+  -webkit-animation: spin 3s linear;
+          animation: spin 3s linear;
+}
+
 /*--BODY--*/
 body {
   margin: 0px;

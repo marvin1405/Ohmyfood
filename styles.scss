@@ -37,10 +37,49 @@
     font-family: 'shrikhand', cursive;
 }
 
+@keyframes loading {
+    from {
+        transform: scale(1);
+    }
+    to {
+        visibility: hidden;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes heart {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
+.loader {
+    position: fixed;
+    background-color: #ffffff;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.9;
+    animation: loading 3s forwards;
+    & i {
+        color: $color-secondary;
+        animation: spin 3s linear;
+    }
+}
 
 /*--BODY--*/
 body {
